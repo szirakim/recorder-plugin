@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="recording_android_nougat">Szüneteltetheti és folytathatja a felvételt, amikor csak akarja, de csak egy felvétel fog készülni. Nyomja meg az alsó gombot a mentéshez.</string>
+    <string name="recording_below_android_nougat">Android Nougat előtti Android verzión a rögzítés nem szüneteltethető, Android L és M esetén szünet/folytatás a felvétel újrakezdését jelenti.</string>
+
+    <string name="permission_rejected">Engedély elutasítva</string>
+    <string name="exit">Kilépés</string>
+    <string name="permission_rejected_content">Úgy tűnik a szükséges AUDIO_RECORD engedéllyel az alkalmazás nem rendelkezik. Ha korábban elutasította, előfordulhat, hogy az Android rendszer nem ajánlotta fel az elfogadást (engedélyezze a beállításokban). Az alkalmazás bezárul, hiszen így nincs értelme nyitva maradnia.</string>
+
+    <string name="save_and_exit">Mentés és kilépés</string>
+</resources>

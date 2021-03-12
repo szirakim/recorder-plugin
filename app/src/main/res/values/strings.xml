@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name" translatable="false">Recorder Plugin</string>
+
+    <string name="recording_android_nougat">You can pause and resume recording whenever you wish, but one recording is created in the end, please press the button below to save it.</string>
+    <string name="recording_below_android_nougat">Recording cannot be resumed below Android Nougat, on Android L and M recording will be restarted if you pause/resume.</string>
+
+    <string name="permission_rejected">Permission rejected</string>
+    <string name="exit">Exit</string>
+    <string name="permission_rejected_content">It seems the required AUDIO_RECORD permission is not accepted. If you rejected previously, it is possible Android will not show the dialog this time (go to settings and accept it there in this case). The application will exit, as it has no use without the permission.</string>
+
+    <string name="save_and_exit">Save and exit</string>
+</resources>

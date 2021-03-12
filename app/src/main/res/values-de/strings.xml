@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="recording_android_nougat">Sie können die Aufnahme jederzeit anhalten und fortsetzen, aber am Ende wird eine Aufnahme erstellt. Drücken Sie die Taste unten, um sie zu speichern.</string>
+    <string name="recording_below_android_nougat">Die Aufnahme kann unter Android Nougat nicht fortgesetzt werden. Unter Android L und M wird die Aufnahme neu gestartet, wenn Sie pausieren/fortsetzen.</string>
+
+    <string name="permission_rejected">Erlaubnis abgelehnt</string>
+    <string name="exit">Ausgang</string>
+    <string name="permission_rejected_content">Es scheint, dass die erforderliche AUDIO_RECORD-Berechtigung nicht akzeptiert wird. Wenn Sie zuvor abgelehnt haben, wird Android den Dialog dieses Mal möglicherweise nicht anzeigen (gehen Sie zu den Einstellungen und akzeptieren Sie ihn in diesem Fall dort). Die Anwendung wird beendet, da sie ohne die Erlaubnis nicht verwendet werden kann.</string>
+
+    <string name="save_and_exit">Speichern und schließen</string>
+</resources>

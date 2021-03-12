@@ -1,0 +1,115 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+
+def appId = "com.szirakiapps.audiorecorderplugin"
+def appVersion = "0.1.0"
+def appVersionCode = 1
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId appId
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode appVersionCode
+        versionName appVersion
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        archivesBaseName = "$applicationId-v$versionCode($versionName)"
+    }
+
+//    signingConfigs {
+//        release {
+//            storeFile file(getLocalProperties().getProperty('storefile'))
+//            keyAlias getLocalProperties().getProperty('keyalias')
+//            storePassword getLocalProperties().getProperty('storepass')
+//            keyPassword getLocalProperties().getProperty('keypass.regexp')
+//        }
+//        debug {
+//            storeFile file(getLocalProperties().getProperty('storefile'))
+//            keyAlias getLocalProperties().getProperty('keyalias')
+//            storePassword getLocalProperties().getProperty('storepass')
+//            keyPassword getLocalProperties().getProperty('keypass.regexp')
+//        }
+//    }
+
+    buildTypes {
+        debug {
+            // signingConfig signingConfigs.debug
+            debuggable true
+            jniDebuggable true
+            minifyEnabled false
+            shrinkResources false
+        }
+        release {
+            // signingConfig signingConfigs.release
+            debuggable false
+            jniDebuggable false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dataBinding {
+        enabled true
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+    }
+}
+
+def getLocalProperties() {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+    return properties
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.core:core-ktx:1.5.0-beta02'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    implementation 'com.google.android.material:material:1.4.0-alpha01'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    kapt 'com.google.dagger:dagger-compiler:2.32'
+    implementation 'com.google.dagger:dagger-android:2.32'
+    implementation 'com.google.dagger:dagger-android-support:2.32'
+    kapt 'com.google.dagger:dagger-android-processor:2.32'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.32'
+
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    implementation 'com.github.Armen101:AudioRecordView:1.0.5'
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test:runner:1.4.0-alpha04'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0-alpha04'
+}

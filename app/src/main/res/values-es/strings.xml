@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="recording_android_nougat">Puede pausar y reanudar la grabación cuando lo desee, pero al final se crea una grabación, presione el botón de abajo para guardarla.</string>
+    <string name="recording_below_android_nougat">La grabación no se puede reanudar por debajo de Android Nougat; en Android L y M, la grabación se reiniciará si pausa/reanuda.</string>
+
+    <string name="permission_rejected">Permiso rechazado</string>
+    <string name="exit">Salida</string>
+    <string name="permission_rejected_content">Parece que no se acepta el permiso de AUDIO_RECORD requerido. Si rechazó anteriormente, es posible que Android no muestre el cuadro de diálogo esta vez (vaya a configuración y acéptelo allí en este caso). La aplicación se cerrará, ya que no tiene uso sin el permiso.</string>
+
+    <string name="save_and_exit">Guardar y Salir</string>
+</resources>

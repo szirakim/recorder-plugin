@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.szirakiapps.audiorecorderplugin.model.util.Recorder" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/app_name"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/txt_recording_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="60sp"
+                tools:text="00:10" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:text="@{Recorder.isPauseSupported() ? @string/recording_android_nougat : @string/recording_below_android_nougat}"
+                tools:text="Shown below Android N" />
+
+            <com.visualizer.amplitude.AudioRecordView
+                android:id="@+id/audioRecordView"
+                android:layout_width="256dp"
+                android:layout_height="80dp"
+                app:chunkAlignTo="center"
+                app:chunkColor="@color/blue_300"
+                app:chunkMaxHeight="80dp"
+                app:chunkMinHeight="2dp"
+                app:chunkRoundedCorners="true"
+                app:chunkSoftTransition="true"
+                app:chunkSpace="1dp"
+                app:chunkWidth="1dp"
+                app:direction="leftToRight" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_record_start"
+                android:layout_width="@dimen/dimen_record_btn_size"
+                android:layout_height="@dimen/dimen_record_btn_size"
+                android:layout_margin="16dp"
+                app:cardCornerRadius="@dimen/dimen_record_btn_size"
+                app:cardElevation="8dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/button_color"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_mic" />
+                </FrameLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_record_pause"
+                android:layout_width="@dimen/dimen_record_btn_size"
+                android:layout_height="@dimen/dimen_record_btn_size"
+                android:layout_margin="16dp"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/dimen_record_btn_size"
+                app:cardElevation="8dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/button_color"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_pause" />
+                </FrameLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_record_resume"
+                android:layout_width="@dimen/dimen_record_btn_size"
+                android:layout_height="@dimen/dimen_record_btn_size"
+                android:layout_margin="16dp"
+                android:visibility="gone"
+                app:cardCornerRadius="@dimen/dimen_record_btn_size"
+                app:cardElevation="8dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/button_color"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_play_arrow" />
+                </FrameLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_save_and_exit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:visibility="gone"
+                app:cardCornerRadius="60dp"
+                app:cardElevation="10dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/button_color"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="40dp"
+                        android:layout_marginVertical="10dp"
+                        android:gravity="center"
+                        android:text="@string/save_and_exit"
+                        android:textAllCaps="true" />
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
