@@ -1,21 +1,21 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'kotlin-android-extensions'
     id 'kotlin-kapt'
 }
 
 def appId = "com.szirakiapps.audiorecorderplugin"
-def appVersion = "0.1.0"
-def appVersionCode = 1
+def appVersion = "0.1.1"
+def appVersionCode = 2
 
 android {
-    compileSdkVersion 30
+    namespace appId
+    compileSdkVersion 36
 
     defaultConfig {
         applicationId appId
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 36
         versionCode appVersionCode
         versionName appVersion
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -98,11 +98,11 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0-alpha01'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
-    kapt 'com.google.dagger:dagger-compiler:2.32'
-    implementation 'com.google.dagger:dagger-android:2.32'
-    implementation 'com.google.dagger:dagger-android-support:2.32'
-    kapt 'com.google.dagger:dagger-android-processor:2.32'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.32'
+    kapt 'com.google.dagger:dagger-compiler:2.57.2'
+    implementation 'com.google.dagger:dagger-android:2.57.2'
+    implementation 'com.google.dagger:dagger-android-support:2.57.2'
+    kapt 'com.google.dagger:dagger-android-processor:2.57.2'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.57.2'
 
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
